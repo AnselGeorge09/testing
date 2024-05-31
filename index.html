@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Advisers Agency</title>
+    <title>Quest Senior Solutions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         /* Additional custom styles */
@@ -59,7 +60,7 @@
         }
         .widget {
         position: fixed;
-        bottom: 20px;
+        bottom: 30px;
         right: 20px;
         width: 60px;
         height: 60px;
@@ -76,7 +77,7 @@
     /* Form Styling */
     #form1234 {
     position: fixed;
-    bottom: 90px;
+    bottom: 95px;
     right: 20px;
     width: 350px;
     padding: 10px;
@@ -195,11 +196,20 @@
 .rotate-out {
     animation: rotateOut 1s forwards;
 }
+.close-btn {
+        
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .close-btn:hover {
+    transform: translateY(-5px); /* adjust the value to your liking */
+    }
 
         
-.close-btn {
-    display: none;
-}
+
 button[type="submit"] {
         width: 100%;
     }
@@ -218,6 +228,8 @@ button[type="submit"] {
     object-fit: cover;
     border-radius: 50%;
   }
+
+  
     </style>
 </head>
 <body>
@@ -226,6 +238,7 @@ button[type="submit"] {
     </div>
     
     <form id="form1234" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <div class="close-btn" onclick="closeForm()"><i class="fa-solid fa-chevron-down"></i></div>
         <h2>Contact Us!</h2>
         <h3></h3>
         <input type="hidden" name="access_key" value="21c62fbd-fbc0-4d5f-ab20-120f3c950857">
@@ -289,70 +302,66 @@ button[type="submit"] {
                 document.getElementById("form1234").reset();
             };
         </script>
-         <div class="close-btn" onclick="closeForm()"><i class="fa-solid fa-xmark"></i></div>
+       
 
     </form>
     <script src="https://web3forms.com/client/script.js" async defer></script>
     
     <!-- JavaScript Functionality -->
     <script>
-    function toggleForm() {
-    var form = document.getElementById('form1234');
-    var icon = document.getElementById('iconElement');
-    var container = document.getElementById('widgetContainer');
-
-    container.classList.toggle('form-visible');
-    form.classList.toggle('visible');
-
-    // Check the current icon class to toggle between the chat icon and the "x" icon
-    if (icon.classList.contains('fa-message')) {
-        icon.classList.remove('fa-message');
-        icon.classList.add('fa-xmark', 'rotate-in');
-    } else {
-        icon.classList.remove('fa-xmark', 'rotate-in');
-        icon.classList.add('fa-message', 'rotate-out');
-        setTimeout(() => {
-            icon.classList.remove('rotate-out');
-        }, 1000); // Adjust the time based on the duration of the rotate-out animation
+     function toggleForm() {
+        var form = document.getElementById('form1234');
+        var icon = document.getElementById('iconElement');
+        var container = document.getElementById('widgetContainer');
+    
+        container.classList.toggle('form-visible');
+        form.classList.toggle('visible');
+    
+        // Check the current icon class to toggle between the chat icon and the "x" icon
+        if (icon.classList.contains('fa-message')) {
+            icon.classList.remove('fa-message');
+            icon.classList.add('fa-xmark', 'rotate-in');
+        } else {
+            icon.classList.remove('fa-xmark', 'rotate-in');
+            icon.classList.add('fa-message', 'rotate-out');
+            setTimeout(() => {
+                icon.classList.remove('rotate-out');
+            }, 1000); // Adjust the time based on the duration of the rotate-out animation
+        }
     }
-}
-
-function closeForm() {
-    var form = document.getElementById('form1234');
-    var icon = document.getElementById('iconElement');
-    var container = document.getElementById('widgetContainer');
-
-    container.classList.remove('form-visible');
-    form.classList.remove('visible');
-
-    // Toggle the icon back to the chat icon when the form is closed
-    if (icon.classList.contains('fa-xmark')) {
-        icon.classList.remove('fa-xmark', 'rotate-in');
-        icon.classList.add('fa-message', 'rotate-out');
-        setTimeout(() => {
-            icon.classList.remove('rotate-out');
-        }, 1000); // Adjust the time based on the duration of the rotate-out animation
+    
+    function closeForm() {
+        var form = document.getElementById('form1234');
+        var icon = document.getElementById('iconElement');
+        var container = document.getElementById('widgetContainer');
+    
+        container.classList.remove('form-visible');
+        form.classList.remove('visible');
+    
+        // Toggle the icon back to the chat icon when the form is closed
+        if (icon.classList.contains('fa-xmark')) {
+            icon.classList.remove('fa-xmark', 'rotate-in');
+            icon.classList.add('fa-message', 'rotate-out');
+            setTimeout(() => {
+                icon.classList.remove('rotate-out');
+            }, 1000); // Adjust the time based on the duration of the rotate-out animation
+        }
     }
-}
     </script>
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa-solid fa-house"></i> Quest Senior Solutions
+                <span class="material-symbols-outlined">Quest Senior Solutions</span>
             </a>
             
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item dropdown-toggle" href="#" id="particlesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Change Particles
-                </a>
-                <div class="dropdown-menu" aria-labelledby="particlesDropdown">
-                    <a class="dropdown-item" href="#" onclick="changeParticle('current')">Web Effect</a>
-                    <a class="dropdown-item" href="#" onclick="changeParticle('rain')">Rain Particles</a>
-                </div>
+                <a class="dropdown-item" href="resources.html"><i class="fa-solid fa-link"></i> Resources</a>
             </div>
+            
+             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -374,16 +383,32 @@ function closeForm() {
             </div>
         </nav>
     </header>
+    <style>
+        .navbar-nav .nav-link {
+            font-size:20px;
+    color: black; /* Set the color of the navigation links to black */
+    transition: color 0.3s; /* Add a smooth color transition on hover */
+}
+
+.navbar-nav .nav-link:hover {
+    color: darkgray; /* Change the color of the navigation links on hover if desired */
+}
+        
+    </style>
     <!-- Particle.js container -->
     <div id="particles-js"></div>
 
     <div class="container mt-5">
         <!-- Jumbotron for main content -->
         <div class="jumbotron">
-            <h1>Your Custom Heading Here</h1>
-            <p>Your custom text goes here. You can provide an introduction or any important message.</p>
+            <h1>Quest Senior Solutions</h1>
+            <p>“Helping Seniors and their families, navigate the senior living journey.”</p>
         </div>
-    
+    <style>
+        
+    </style>
+
+
         <!-- Sections for About Us, Our Services, Contact Us -->
 <div>
 
