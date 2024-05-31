@@ -4,26 +4,12 @@ change number and emails in cookie policy, and contact
 put correct info in contact
 change  <input type="hidden" name="redirect" value="https://testruns123.github.io/testing/yessubmit.html"> 
                                                                                     -----
-                                                                                    Change the repo
+add questseniorsolutiosn from godaddy (whatch yt)
 
-asdasdasdasd
+change email adressid for web3forms\
 
+change index to have images
 
-<div class="close-btn" onclick="closeForm()"><i class="fa-solid fa-chevron-down"></i></div>
+add images in places
 
-.close-btn {
-        
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-.close-btn:hover {
-transform: translateY(-5px); /* adjust the value to your liking */
-}
-
-
-
-
-<div class="dropdown-divider"></div>
+add logo in places
