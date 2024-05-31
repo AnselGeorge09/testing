@@ -648,7 +648,7 @@ button[type="submit"] {
         // Load the selected particle effect from local storage and apply it
         var savedEffect = localStorage.getItem('particleEffect');
         if (savedEffect) {
-            changeParticle(savedEffect);
+            changeParticle('current');
         } else {
             changeParticle('current'); // Default particle effect
         }
