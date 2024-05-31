@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freeman&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freeman&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Advisers Agency</title>
+    <title>Our Team-Quest Senior Solutions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -29,8 +42,8 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .team-avatar {
-            width: 150px;
-            height: 150px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             margin: 0 auto 20px;
             display: block;
@@ -77,6 +90,8 @@
     opacity: 1;
     visibility: visible;
 }
+
+
 
 @media only screen and (max-width: 768px) {
     .widget {
@@ -131,6 +146,8 @@
     animation: rotateOut 1s forwards;
 }
 
+
+
       
 
 /* Mobile styles for smaller devices */
@@ -174,10 +191,20 @@
         cursor: pointer;
     }
 }
+
         
 .close-btn {
-    display: none;
-}
+        
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .close-btn:hover {
+    transform: translateY(-5px); /* adjust the value to your liking */
+    }
+
 button[type="submit"] {
         width: 100%;
     }
@@ -188,7 +215,7 @@ button[type="submit"] {
         <i id="iconElement" class="fa-solid fa-message"></i> <!-- Default chat icon -->
     </div>
     <form id="form1234" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-        <div class="close-btn" onclick="closeForm()"><i class="fa-solid fa-xmark"></i></div>
+        <div class="close-btn" onclick="closeForm()"><i class="fa-solid fa-chevron-down"></i></div>
         <h2>Contact Us!</h2>
         <h3></h3>
         <input type="hidden" name="access_key" value="21c62fbd-fbc0-4d5f-ab20-120f3c950857">
@@ -253,52 +280,57 @@ button[type="submit"] {
     
     <!-- JavaScript Functionality -->
     <script>
-        function toggleForm() {
-        var form = document.getElementById('form1234');
-        var icon = document.getElementById('iconElement');
-        var container = document.getElementById('widgetContainer');
-    
-        container.classList.toggle('form-visible');
-        form.classList.toggle('visible');
-    
-        // Check the current icon class to toggle between the chat icon and the "x" icon
-        if (icon.classList.contains('fa-message')) {
-            icon.classList.remove('fa-message');
-            icon.classList.add('fa-xmark', 'rotate-in');
-        } else {
-            icon.classList.remove('fa-xmark', 'rotate-in');
-            icon.classList.add('fa-message', 'rotate-out');
-            setTimeout(() => {
-                icon.classList.remove('rotate-out');
-            }, 1000); // Adjust the time based on the duration of the rotate-out animation
-        }
+        
+
+function toggleForm() {
+    var form = document.getElementById('form1234');
+    var icon = document.getElementById('iconElement');
+    var container = document.getElementById('widgetContainer');
+
+    container.classList.toggle('form-visible');
+    form.classList.toggle('visible');
+
+    // Check the current icon class to toggle between the chat icon and the "x" icon
+    if (icon.classList.contains('fa-message')) {
+        icon.classList.remove('fa-message');
+        icon.classList.add('fa-xmark', 'rotate-in');
+    } else {
+        icon.classList.remove('fa-xmark', 'rotate-in');
+        icon.classList.add('fa-message', 'rotate-out');
+        setTimeout(() => {
+            icon.classList.remove('rotate-out');
+        }, 1000); // Adjust the time based on the duration of the rotate-out animation
     }
-    
-    function closeForm() {
-        var form = document.getElementById('form1234');
-        var icon = document.getElementById('iconElement');
-        var container = document.getElementById('widgetContainer');
-    
-        container.classList.remove('form-visible');
-        form.classList.remove('visible');
-    
-        // Toggle the icon back to the chat icon when the form is closed
-        if (icon.classList.contains('fa-xmark')) {
-            icon.classList.remove('fa-xmark', 'rotate-in');
-            icon.classList.add('fa-message', 'rotate-out');
-            setTimeout(() => {
-                icon.classList.remove('rotate-out');
-            }, 1000); // Adjust the time based on the duration of the rotate-out animation
-        }
+}
+
+function closeForm() {
+    var form = document.getElementById('form1234');
+    var icon = document.getElementById('iconElement');
+    var container = document.getElementById('widgetContainer');
+
+    container.classList.remove('form-visible');
+    form.classList.remove('visible');
+
+    // Toggle the icon back to the chat icon when the form is closed
+    if (icon.classList.contains('fa-xmark')) {
+        icon.classList.remove('fa-xmark', 'rotate-in');
+        icon.classList.add('fa-message', 'rotate-out');
+        setTimeout(() => {
+            icon.classList.remove('rotate-out');
+        }, 1000); // Adjust the time based on the duration of the rotate-out animation
     }
+}
         </script>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-solid fa-house"></i> Quest Senior Solutions
+            <span class="material-symbols-outlined">Quest Senior Solutions</span>
         </a>
         
+         
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="resources.html"><i class="fa-solid fa-link"></i> Resources</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -322,10 +354,359 @@ button[type="submit"] {
     </nav>
     
     <div class="container team-container">
-        <img src="https://via.placeholder.com/200" alt="Lisa Jackson" class="team-avatar">
+        <img src="IMG_6657.jpg" alt="Lisa Jackson" class="team-avatar">
         <h1 class="text-center">Lisa Jackson</h1>
-        <p class="team-description">Lisa Jackson is the Senior Advisor at Senior Advisers Agency. With over two decades of experience in environmental policy and government affairs, Lisa is dedicated to creating sustainable solutions for a greener future. Her expertise and leadership have been instrumental in driving positive change in environmental initiatives worldwide.</p>
+        <p class="team-description">Lisa Jackson is the Senior Advisor at Quest Senior Solutions. ..........Etc</p>
     </div>
+
+    <div class="timeline-buttons">
+        <button class="timeline-button timeline-button-down-1">
+            <i class="fa-solid fa-angles-down"></i>
+        </button>
+        <button class="timeline-button timeline-button-down-2" style="display: none;">
+            <i class="fa-solid fa-angles-down"></i>
+        </button>
+        <button class="timeline-button timeline-button-down-3" style="display: none;">
+            <i class="fa-solid fa-angles-down"></i>
+        </button>
+        <button class="timeline-button timeline-button-down-4" style="display: none;">
+            <i class="fa-solid fa-angles-down"></i>
+        </button>
+        <button class="timeline-button timeline-button-up" style="display: none;">
+            <i class="fa-solid fa-angles-up"></i>
+        </button>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var timelineButtons = document.querySelectorAll('.timeline-button');
+    var timelineItems = document.querySelectorAll('.yo');
+    var currentIndex = 0;
+
+    function scrollToNextItem() {
+        if (currentIndex < timelineItems.length - 1) {
+            timelineItems[currentIndex + 1].scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            currentIndex++;
+            toggleButtons();
+        } else {
+            scrollToTop();
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        currentIndex = 0;
+        toggleButtons();
+    }
+
+    function toggleButtons() {
+        var downButton1 = document.querySelector('.timeline-button-down-1');
+        var downButton2 = document.querySelector('.timeline-button-down-2');
+        var downButton3 = document.querySelector('.timeline-button-down-3');
+        var downButton4 = document.querySelector('.timeline-button-down-4');
+        var upButton = document.querySelector('.timeline-button-up');
+
+        if (currentIndex === 0) {
+            downButton1.style.display = 'block';
+            downButton2.style.display = 'none';
+            downButton3.style.display = 'none';
+            downButton4.style.display = 'none';
+            upButton.style.display = 'none';
+        } else if (currentIndex === 1) {
+            downButton1.style.display = 'none';
+            downButton2.style.display = 'block';
+            downButton3.style.display = 'none';
+            downButton4.style.display = 'none';
+            upButton.style.display = 'none';
+        } else if (currentIndex === 2) {
+            downButton1.style.display = 'none';
+            downButton2.style.display = 'none';
+            downButton3.style.display = 'block';
+            downButton4.style.display = 'none';
+            upButton.style.display = 'none';
+        } else if (currentIndex === 3) {
+            downButton1.style.display = 'none';
+            downButton2.style.display = 'none';
+            downButton3.style.display = 'none';
+            downButton4.style.display = 'block';
+            upButton.style.display = 'none';
+        } else if (currentIndex === 4) {
+            downButton1.style.display = 'none';
+            downButton2.style.display = 'none';
+            downButton3.style.display = 'none';
+            downButton4.style.display = 'none';
+            upButton.style.display = 'block';
+        }
+    }
+
+    document.querySelector('.timeline-button-down-1').addEventListener('click', scrollToNextItem);
+    document.querySelector('.timeline-button-down-2').addEventListener('click', scrollToNextItem);
+    document.querySelector('.timeline-button-down-3').addEventListener('click', scrollToNextItem);
+    document.querySelector('.timeline-button-down-4').addEventListener('click', scrollToNextItem);
+    document.querySelector('.timeline-button-up').addEventListener('click', scrollToTop);
+});
+
+    </script>
+<style>
+    .timeline-button.timeline-button-down-1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
+        z-index: 2;
+    }
+    
+    .timeline-button.timeline-button-down-2 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -150px;
+        z-index: 2;
+    }
+    .timeline-button.timeline-button-down-3 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -375px;
+        z-index: 2;
+    }
+    .timeline-button.timeline-button-down-4 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -575px;
+        z-index: 2;
+    }
+    
+    .timeline-button.timeline-button-up {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -750px;
+        z-index: 2;
+    }
+    
+    .timeline-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .timeline{
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius:10px;
+    }
+      
+.timeline-button:hover {
+    background-color: #b0bb7e;
+}
+
+.timeline-button i {
+    font-size: 24px;
+    color: #000000;
+}
+
+    </style>
+    <section id="timeline1">
+        <div><h1 class="hello">Lisa's promises</h1>
+        </div>
+
+        
+        <div class="timeline">
+    
+            <div class="yo left">
+                <div class="content">
+                    <h2>Personalized Financial Guidance</h2>
+                    <p>I will work closely with you to understand your unique financial goals and create a customized plan to help you achieve them.</p>
+                </div>
+            </div>
+            <div class="yo right">
+                <div class="content">
+                    <h2>Responsible Investment Strategies</h2>
+                    <p>Our team will develop investment strategies that align with your risk tolerance and financial objectives, focusing on long-term growth.</p>
+                </div>
+            </div>
+            <div class="yo left">
+                <div class="content">
+                    <h2>Ongoing Support and Monitoring</h2>
+                    <p>We will regularly review your financial situation and make adjustments to your plan as needed, ensuring it remains on track.</p>
+                </div>
+            </div>
+            
+            <div class="yo right">
+                <div class="content">
+                    <h2>Transparent and Ethical Advice</h2>
+                    <p>You can trust that our recommendations will always be in your best interest, as we adhere to the highest ethical standards.</p>
+                </div>
+            </div>
+            <div class="yo left">
+                <div class="content">
+                    <h2>Collaborative Approach</h2>
+                    <p>We believe in working together with you and your other trusted advisors to ensure a cohesive financial strategy.</p>
+                </div>
+            </div>
+            <div class="yo right">
+                <div class="content">
+                    <h2>Responsive Client Service</h2>
+                    <p>You will have a dedicated point of contact who will be available to answer your questions and provide timely assistance.</p>
+                </div>
+            </div>
+            <div class="yo left">
+                <div class="content">
+                    <h2>Financial Education and Guidance</h2>
+                    <p>We are committed to empowering you with financial knowledge, providing ongoing education and guidance to help you make informed decisions.</p>
+                </div>
+            </div>
+            <div class="yo right">
+                <div class="content">
+                    <h2>Family-Focused Planning</h2>
+                    <p>Our services extend to helping you plan for the financial well-being of your family, ensuring a secure future for your loved ones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<style>
+
+    .text-center{
+        font-family: "Merriweather", serif;
+    }
+ p{
+    font-family: "Freeman", sans-serif;
+ }
+    h2{
+        font-family: "Platypi", serif;
+    }
+    .hello{
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        margin-bottom: 3%;
+    }
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 20px auto;
+        display:none;
+        
+    }
+    .timeline.visible {
+            display: block;
+        }
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #000000;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+    .yo {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+    }
+    .yo.left {
+        left: 0%;
+        top: -25px;
+    }
+    .yo.right {
+        left: 50%;
+        top: -25px;
+    }
+    .yo::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -13px; /* Adjusted to align the circles on the line */
+        background-color: white;
+        border: 4px solid #fffb00;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .right::after {
+        left: -13px; /* Adjusted to align the circles on the line */
+    }
+    .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        opacity: 0; /* Hidden initially */
+        transform: translateY(50px); /* Start with some translate */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    /* Media queries for mobile responsiveness */
+    @media screen and (max-width: 600px) {
+        .timeline::after {
+            left: 31px;
+        }
+        .container {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+        .container.left, .container.right {
+            left: -3%;
+        }
+        .container::after {
+            left: 30px;
+        }
+        .container.right::after {
+            left: 30px;
+        }
+    }
+</style>
+<script>
+   document.addEventListener('scroll', function() {
+    var timeline = document.querySelector('.timeline');
+    var windowHeight = window.innerHeight;
+    var timelinePosition = timeline.getBoundingClientRect().top;
+
+    if (timelinePosition < windowHeight - 100) {
+        timeline.classList.add('visible');
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(function(content) {
+            var position = content.getBoundingClientRect().top;
+            if (position < windowHeight - 100) {
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+            } else {
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(50px)';
+            }
+        });
+    } else {
+        timeline.classList.remove('visible');
+    }
+});
+
+// Initialize visibility based on initial scroll position
+document.addEventListener('DOMContentLoaded', function() {
+    var event = new Event('scroll');
+    document.dispatchEvent(event);
+});
+</script>
+
+   
+      
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

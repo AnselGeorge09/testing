@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources for Seniors</title>
+
+    <!-- Bootstrap CSS --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS for Layout and Hover Effects -->
+    <style>
+        body {
+            font-family: "Freeman", sans-serif;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            font-family: "Merriweather", serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .navbar {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+        }
+        .navbar-brand {
+            font-family: "Platypi", serif;
+            font-size: 32px;
+        }
+        .navbar-nav .nav-link {
+            font-size: 23px;
+        }
+        .resource-link {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-radius: 5px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .resource-link:hover {
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand"  href="index.html">Quest Senior Solutions</a>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                         <a class="nav-link" href="About.html"> <i class="fa-solid fa-address-card"></i> About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Services.html"> <i class="fa-solid fa-bell-concierge"></i> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html"><i class="fa-solid fa-people-group"></i> Team</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+</header>
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Useful Resources for Seniors</h1>
+
+    <div class="row">
+        <!-- Resource Links -->
+        <div class="col-lg-4 col-md-6">
+            <a href="https://eldercare.acl.gov/Public/Index.aspx" target="_blank" class="resource-link">
+                <h3>Eldercare Locator</h3>
+                <p>Connects seniors to resources in their community.</p>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <a href="https://www.ncoa.org/" target="_blank" class="resource-link">
+                <h3>National Council on Aging</h3>
+                <p>Provides programs to help seniors live independently.</p>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <a href="https://www.aarp.org/" target="_blank" class="resource-link">
+                <h3>AARP</h3>
+                <p>Dedicated to empowering seniors in aging.</p>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <a href="https://www.medicare.gov/" target="_blank" class="resource-link">
+                <h3>Medicare</h3>
+                <p>Official U.S. site for Medicare information.</p>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <a href="https://www.alz.org/" target="_blank" class="resource-link">
+                <h3>Alzheimer's Association</h3>
+                <p>Supports individuals with Alzheimer's.</p>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <a href="https://www.mealsonwheelsamerica.org/" target="_blank" class="resource-link">
+                <h3>Meals on Wheels America</h3>
+                <p>Provides meals and visits to seniors in need.</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/4e964d603e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
